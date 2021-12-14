@@ -1,5 +1,5 @@
 from random import *
-loeng=[]
+s=pos=neg=loeng=[]
 def arvud_loendis():
     """
     :param arv n:int
@@ -22,18 +22,17 @@ def arvud_loendis():
         print("Полученный список от",mini,"до",maxi,loeng)
         loeng.sort()
         print("Отсортированный список",loeng)
-        jagamine(loeng,p,n,noll)
-        print("Список положительных элементов",p)
-        print("Список отрицательных элементов",n)
+        jagamine(loeng,pos,neg,noll)
+        print("Список положительных элементов",pos)
+        print("Список отрицательных элементов",neg)
         print("Список нулевых элементов",noll)
         kesk=keskmine(loeng)
-        lisamine(loend,l,kesk)
+        lisamine(loeng,kesk)
         print("Среднее положительных:",kesk)
-        kesk=keskmine(loeng,n)
-        lisamine(loeng,el,kesk)
+        kesk=keskmine(neg)
+        lisamine(loeng,kesk)
         print("Среднее отрицательных:",kesk)
         print("Добавляем средние в изначалный массив:")
-        loeng.sort
         print(loeng)
 def vahetus(mini:int,maxi:int):
     """
@@ -45,13 +44,13 @@ def vahetus(mini:int,maxi:int):
     mini=maxi
     maxi=abi
     return mini,maxi
-def generator(n,loeng,a,b):
+def generator(n:int,loeng:list,a:int,b:int):
     """
     Генерирует рандомное число в диапазоне а и b и добавляет его/их в список
     """
     for i in range(n):
         loeng.append((randint(a,b)))
-def jagamine(loeng,p,n,noll):
+def jagamine(loeng:list,p:list,n:list,noll:list):
     """
     Показывает отрицательные и положительные числа и добавляет их в список
     """
@@ -60,7 +59,7 @@ def jagamine(loeng,p,n,noll):
             loeng.append(el)
         else:
             loeng.append(noll)
-def keskmine(loeng):
+def keskmine(loeng:list):
     """
     Показывает среднее положительные и средне отрицательные числа
     """
@@ -73,7 +72,7 @@ def keskmine(loeng):
             sum+=i
             kesk=round(sum/n,2)
     return kesk
-def lisamine(loeng,el):
+def lisamine(loeng:list,el):
     loeng.append(el)
     loeng.sort()
 arvud_loendis()
