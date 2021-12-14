@@ -73,7 +73,7 @@ def keskmine(loeng:list):
             sum+=i
             kesk=round(sum/n,2)
     return kesk
-def lisamine(loeng:list,el):
+def lisamine(loeng:list,el:float):
     """
 
     :param arv el: int and float
