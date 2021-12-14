@@ -1,5 +1,4 @@
 from random import *
-loeng=["2,3,4,5,6"]
 def arvud_loendis():
     print("Данные: ")
     n=abs(int(input("Сколько целых чисел генерируем в список? => ")))

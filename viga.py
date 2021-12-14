@@ -1,4 +1,5 @@
 from random import *
+from module import*
 s=pos=neg=loeng=[]
 def arvud_loendis():
     """
@@ -32,7 +33,7 @@ def arvud_loendis():
         kesk=keskmine(neg)
         lisamine(loeng,kesk)
         print("Среднее отрицательных:",kesk)
-        print("Добавляем средние в изначалный массив:")
+        print("Добавляем средние в изначалный массив: ")
         print(loeng)
 def vahetus(mini:int,maxi:int):
     """
@@ -73,6 +74,12 @@ def keskmine(loeng:list):
             kesk=round(sum/n,2)
     return kesk
 def lisamine(loeng:list,el):
+    """
+
+    :param arv el: int and float
+    Программа добавляет среднее отрицательное или среднее положительное в изначальный массив
+
+    """
     loeng.append(el)
     loeng.sort()
 arvud_loendis()
